@@ -41,7 +41,10 @@ jobs:
       
     - name: Build JAR
       run: ./gradlew clean build
-    
+      
+    - name: Check build output
+      run: ls -R build/libs
+        
     - name : Build and Push Docker Image
       uses: mr-smithers-excellent/docker-build-push@v6
       with:
